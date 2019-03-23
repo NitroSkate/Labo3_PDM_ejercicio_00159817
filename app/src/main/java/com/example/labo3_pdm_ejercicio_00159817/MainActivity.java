@@ -4,8 +4,10 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Patterns;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.RadioButton;
 import android.widget.Toast;
 
 import com.example.labo3_pdm_ejercicio_00159817.utils.AppConstants;
@@ -31,7 +33,7 @@ public class MainActivity extends AppCompatActivity {
             Intent i1 = new Intent(MainActivity.this, NewActivity.class);
             i1.setType("text/plain");
             if (Patterns.EMAIL_ADDRESS.matcher(et3.getText()).matches() && !(et1.getText().toString().equals("")) && !(et2.getText().toString().equals("")) && !(et4.getText().toString().equals(""))){
-                String[] et = {et1.getText().toString(), et2.getText().toString(), et3.getText().toString(), et4.getText().toString()};
+                String[] et = {et1.getText().toString(), et2.getText().toString(), et3.getText().toString(),et4.getText().toString()};
                 i1.putExtra(AppConstants.T1, et);
                 startActivity(i1);
             }
@@ -39,6 +41,5 @@ public class MainActivity extends AppCompatActivity {
                 Toast.makeText(this, "Error", Toast.LENGTH_LONG).show();
             }
         });
-
     }
 }
